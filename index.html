@@ -32,7 +32,7 @@ nav.solid{background:rgba(250,250,248,0.97);backdrop-filter:blur(20px);height:64
 nav.solid .nav-logo-main{color:var(--charcoal)}
 nav.solid .nav-logo-sub{color:var(--gold)}
 .nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
-.nav-links a{font-size:0.73rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.82);text-decoration:none;cursor:pointer;position:relative;padding-bottom:2px;transition:color 0.3s}
+.nav-links a{font-size:0.73rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.82);text-decoration:none;cursor:pointer;position:relative;padding-bottom:2px;transition:color 0.3s;touch-action:manipulation;-webkit-tap-highlight-color:rgba(184,154,106,0.2)}
 .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;right:100%;height:1px;background:var(--gold);transition:right 0.3s}
 .nav-links a:hover::after,.nav-links a.active::after{right:0}
 nav.solid .nav-links a{color:var(--stone)}
@@ -78,6 +78,9 @@ nav.solid .hamburger span{background:var(--charcoal)}
   transition:color 0.2s,padding-left 0.2s;
   user-select:none;
   touch-action:manipulation;
+  min-height:48px;
+  display:flex;
+  align-items:center;
 }
 .mobile-menu-inner a:active{color:var(--gold);padding-left:12px}
 .mobile-menu-inner a.active{color:var(--gold)}
@@ -129,7 +132,7 @@ nav.solid .hamburger span{background:var(--charcoal)}
 .btn-white{font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--white);background:transparent;padding:13px 30px;border:1px solid rgba(255,255,255,0.35);border-radius:2px;display:inline-block;cursor:pointer;text-decoration:none;transition:all 0.3s;font-family:var(--sans);touch-action:manipulation}
 .btn-white:hover{border-color:var(--gold);background:rgba(184,154,106,0.1);transform:translateY(-2px)}
 .page-hero{padding-top:64px;background:var(--charcoal);position:relative;overflow:hidden}
-.page-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0.14}
+.page-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0.14;pointer-events:none}
 .page-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(28,28,28,0.96),rgba(40,30,20,0.9));z-index:1}
 .page-hero-inner{padding:86px 5vw 74px;position:relative;z-index:2;max-width:760px}
 .breadcrumb{display:flex;align-items:center;gap:7px;font-size:0.65rem;color:rgba(255,255,255,0.36);margin-bottom:1.5rem;flex-wrap:wrap}
@@ -165,17 +168,17 @@ footer{background:#141414;padding:56px 5vw 24px}
 
 /* ===== HOME PAGE ===== */
 #hero{height:100vh;min-height:640px;position:relative;display:flex;align-items:flex-end;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(to right,rgba(28,28,28,0.78) 0%,rgba(28,28,28,0.28) 60%,rgba(28,28,28,0.08) 100%),url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071') center/cover no-repeat;transform:scale(1.06);transition:transform 8s ease}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(to right,rgba(28,28,28,0.78) 0%,rgba(28,28,28,0.28) 60%,rgba(28,28,28,0.08) 100%),url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071') center/cover no-repeat;transform:scale(1.06);transition:transform 8s ease;pointer-events:none}
 #hero.loaded .hero-bg{transform:scale(1)}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(10,8,6,0.6) 100%)}
-.hero-content{position:relative;z-index:2;padding:0 5vw 8vh;max-width:740px;animation:heroIn 1.1s 0.3s cubic-bezier(0.22,1,0.36,1) both}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(10,8,6,0.6) 100%);pointer-events:none}
+.hero-content{position:relative;z-index:3;padding:0 5vw 8vh;max-width:740px;animation:heroIn 1.1s 0.3s cubic-bezier(0.22,1,0.36,1) both}
 @keyframes heroIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:0.65rem;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold-light);margin-bottom:1.2rem}
 .hero-eyebrow::before{content:'';width:36px;height:1px;background:var(--gold)}
 .hero-h1{font-family:var(--serif);font-size:clamp(2.8rem,6vw,5.2rem);font-weight:300;line-height:1.05;color:var(--white);margin-bottom:1.4rem}
 .hero-h1 em{font-style:italic;color:var(--gold-light)}
 .hero-sub{font-size:0.98rem;font-weight:300;line-height:1.76;color:rgba(250,250,248,0.66);max-width:500px;margin-bottom:2.3rem}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;position:relative;z-index:3}
 .hero-stats{position:absolute;bottom:5vh;right:5vw;display:flex;gap:2.5rem;z-index:2;animation:heroIn 1.1s 0.7s cubic-bezier(0.22,1,0.36,1) both}
 .hero-stat{text-align:right}
 .hero-stat-num{font-family:var(--serif);font-size:2.2rem;font-weight:300;color:var(--white);line-height:1}
@@ -358,7 +361,7 @@ footer{background:#141414;padding:56px 5vw 24px}
 .hours-val{font-family:var(--serif);font-size:1.06rem;font-weight:400;color:var(--charcoal)}
 
 /* ===== WHATSAPP ===== */
-#wa-widget{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;font-family:var(--sans)}
+#wa-widget{position:fixed;bottom:80px;right:16px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;font-family:var(--sans)}
 #wa-bubble{width:58px;height:58px;background:#1C1C1C;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 24px rgba(0,0,0,0.26);transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.3s;position:relative;border:1.5px solid rgba(184,154,106,0.26);-webkit-tap-highlight-color:transparent}
 #wa-bubble:hover{transform:scale(1.1);box-shadow:0 10px 34px rgba(0,0,0,0.3)}
 .wa-bicon{width:26px;height:26px}.wa-xicon{display:none;width:18px;height:18px;color:var(--gold)}
@@ -425,8 +428,12 @@ footer{background:#141414;padding:56px 5vw 24px}
   .hours-row{grid-template-columns:1fr;padding:36px 5vw 56px}
   .footer-top{grid-template-columns:1fr}
   #wa-panel{width:calc(100vw - 32px)}
+  #wa-widget{bottom:70px;right:12px}
   .why-items{grid-template-columns:1fr}
 }
+
+/* Mobile tap fixes */
+.btn-gold,.btn-dark,.btn-white,.btn-form{touch-action:manipulation;-webkit-tap-highlight-color:rgba(184,154,106,0.2);cursor:pointer}
 </style>
 </head>
 <body>
@@ -539,13 +546,13 @@ document.addEventListener('DOMContentLoaded', function() {
     <span class="nav-logo-sub">Premium Real Estate</span>
   </div>
   <ul class="nav-links">
-    <li><a href="#" onclick="goTo('home');return false;" class="active" id="nl-home">Home</a></li>
-    <li><a href="#" onclick="goTo('about');return false;" id="nl-about">About</a></li>
-    <li><a href="#" onclick="goTo('services');return false;" id="nl-services">Services</a></li>
-    <li><a href="#" onclick="goTo('properties');return false;" id="nl-properties">Properties</a></li>
-    <li><a href="#" onclick="goTo('testimonials');return false;" id="nl-testimonials">Testimonials</a></li>
-    <li><a href="#" onclick="goTo('contact');return false;" id="nl-contact">Contact</a></li>
-    <li><a href="#" onclick="goTo('contact');return false;" class="nav-cta">Book Consultation</a></li>
+    <li><a href="javascript:void(0)" onclick="goTo('home');return false;" class="active" id="nl-home">Home</a></li>
+    <li><a href="javascript:void(0)" onclick="goTo('about');return false;" id="nl-about">About</a></li>
+    <li><a href="javascript:void(0)" onclick="goTo('services');return false;" id="nl-services">Services</a></li>
+    <li><a href="javascript:void(0)" onclick="goTo('properties');return false;" id="nl-properties">Properties</a></li>
+    <li><a href="javascript:void(0)" onclick="goTo('testimonials');return false;" id="nl-testimonials">Testimonials</a></li>
+    <li><a href="javascript:void(0)" onclick="goTo('contact');return false;" id="nl-contact">Contact</a></li>
+    <li><a href="javascript:void(0)" onclick="goTo('contact');return false;" class="nav-cta">Book Consultation</a></li>
   </ul>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" type="button" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -558,13 +565,13 @@ document.addEventListener('DOMContentLoaded', function() {
     <svg viewBox="0 0 20 20" fill="none"><line x1="4" y1="4" x2="16" y2="16"/><line x1="16" y1="4" x2="4" y2="16"/></svg>
   </button>
   <div class="mobile-menu-inner">
-    <a href="#" onclick="goTo('home');return false;">Home</a>
-    <a href="#" onclick="goTo('about');return false;">About</a>
-    <a href="#" onclick="goTo('services');return false;">Services</a>
-    <a href="#" onclick="goTo('properties');return false;">Properties</a>
-    <a href="#" onclick="goTo('testimonials');return false;">Testimonials</a>
-    <a href="#" onclick="goTo('contact');return false;">Contact</a>
-    <a href="#" onclick="goTo('contact');return false;" class="mob-cta">Book Consultation</a>
+    <a href="javascript:void(0)" onclick="goTo('home');return false;">Home</a>
+    <a href="javascript:void(0)" onclick="goTo('about');return false;">About</a>
+    <a href="javascript:void(0)" onclick="goTo('services');return false;">Services</a>
+    <a href="javascript:void(0)" onclick="goTo('properties');return false;">Properties</a>
+    <a href="javascript:void(0)" onclick="goTo('testimonials');return false;">Testimonials</a>
+    <a href="javascript:void(0)" onclick="goTo('contact');return false;">Contact</a>
+    <a href="javascript:void(0)" onclick="goTo('contact');return false;" class="mob-cta">Book Consultation</a>
   </div>
 </div>
 
@@ -649,19 +656,19 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="footer-col">
       <div class="footer-col-title">Services</div>
       <ul>
-        <li><a href="#" onclick="goTo('services');return false;">House and Land</a></li>
-        <li><a href="#" onclick="goTo('services');return false;">New Homes</a></li>
-        <li><a href="#" onclick="goTo('services');return false;">Renovations</a></li>
-        <li><a href="#" onclick="goTo('services');return false;">Extensions</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">House and Land</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">New Homes</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">Renovations</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">Extensions</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <ul>
-        <li><a href="#" onclick="goTo('about');return false;">About Us</a></li>
-        <li><a href="#" onclick="goTo('properties');return false;">Properties</a></li>
-        <li><a href="#" onclick="goTo('testimonials');return false;">Reviews</a></li>
-        <li><a href="#" onclick="goTo('contact');return false;">Contact</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('about');return false;">About Us</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('properties');return false;">Properties</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('testimonials');return false;">Reviews</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('contact');return false;">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -669,7 +676,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <ul>
         <li><a href="mailto:info@mannpropertygroup.com.au">info@mannpropertygroup.com.au</a></li>
         <li><a href="tel:0401050235">0401 050 235</a></li>
-        <li><a href="#" onclick="goTo('contact');return false;">Book a Consultation</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('contact');return false;">Book a Consultation</a></li>
       </ul>
     </div>
   </div>
@@ -747,19 +754,19 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="footer-col">
       <div class="footer-col-title">Services</div>
       <ul>
-        <li><a href="#" onclick="goTo('services');return false;">House and Land</a></li>
-        <li><a href="#" onclick="goTo('services');return false;">New Homes</a></li>
-        <li><a href="#" onclick="goTo('services');return false;">Renovations</a></li>
-        <li><a href="#" onclick="goTo('services');return false;">Extensions</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">House and Land</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">New Homes</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">Renovations</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">Extensions</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <ul>
-        <li><a href="#" onclick="goTo('about');return false;">About Us</a></li>
-        <li><a href="#" onclick="goTo('properties');return false;">Properties</a></li>
-        <li><a href="#" onclick="goTo('testimonials');return false;">Reviews</a></li>
-        <li><a href="#" onclick="goTo('contact');return false;">Contact</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('about');return false;">About Us</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('properties');return false;">Properties</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('testimonials');return false;">Reviews</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('contact');return false;">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -767,7 +774,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <ul>
         <li><a href="mailto:info@mannpropertygroup.com.au">info@mannpropertygroup.com.au</a></li>
         <li><a href="tel:0401050235">0401 050 235</a></li>
-        <li><a href="#" onclick="goTo('contact');return false;">Book a Consultation</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('contact');return false;">Book a Consultation</a></li>
       </ul>
     </div>
   </div>
@@ -838,19 +845,19 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="footer-col">
       <div class="footer-col-title">Services</div>
       <ul>
-        <li><a href="#" onclick="goTo('services');return false;">House and Land</a></li>
-        <li><a href="#" onclick="goTo('services');return false;">New Homes</a></li>
-        <li><a href="#" onclick="goTo('services');return false;">Renovations</a></li>
-        <li><a href="#" onclick="goTo('services');return false;">Extensions</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">House and Land</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">New Homes</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">Renovations</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">Extensions</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <ul>
-        <li><a href="#" onclick="goTo('about');return false;">About Us</a></li>
-        <li><a href="#" onclick="goTo('properties');return false;">Properties</a></li>
-        <li><a href="#" onclick="goTo('testimonials');return false;">Reviews</a></li>
-        <li><a href="#" onclick="goTo('contact');return false;">Contact</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('about');return false;">About Us</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('properties');return false;">Properties</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('testimonials');return false;">Reviews</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('contact');return false;">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -858,7 +865,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <ul>
         <li><a href="mailto:info@mannpropertygroup.com.au">info@mannpropertygroup.com.au</a></li>
         <li><a href="tel:0401050235">0401 050 235</a></li>
-        <li><a href="#" onclick="goTo('contact');return false;">Book a Consultation</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('contact');return false;">Book a Consultation</a></li>
       </ul>
     </div>
   </div>
@@ -896,7 +903,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="props-cta">
     <h2 class="reveal">Not seeing what you are <em>looking for?</em></h2>
     <p class="reveal d1">We have access to off-market listings and upcoming releases. Get in touch and let us find exactly what you need.</p>
-    <button class="btn-gold reveal d2" href="#" onclick="goTo('contact');return false;">Contact Us Today</button>
+    <button class="btn-gold reveal d2" href="javascript:void(0)" onclick="goTo('contact');return false;">Contact Us Today</button>
   </div>
   
 <footer>
@@ -914,19 +921,19 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="footer-col">
       <div class="footer-col-title">Services</div>
       <ul>
-        <li><a href="#" onclick="goTo('services');return false;">House and Land</a></li>
-        <li><a href="#" onclick="goTo('services');return false;">New Homes</a></li>
-        <li><a href="#" onclick="goTo('services');return false;">Renovations</a></li>
-        <li><a href="#" onclick="goTo('services');return false;">Extensions</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">House and Land</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">New Homes</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">Renovations</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">Extensions</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <ul>
-        <li><a href="#" onclick="goTo('about');return false;">About Us</a></li>
-        <li><a href="#" onclick="goTo('properties');return false;">Properties</a></li>
-        <li><a href="#" onclick="goTo('testimonials');return false;">Reviews</a></li>
-        <li><a href="#" onclick="goTo('contact');return false;">Contact</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('about');return false;">About Us</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('properties');return false;">Properties</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('testimonials');return false;">Reviews</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('contact');return false;">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -934,7 +941,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <ul>
         <li><a href="mailto:info@mannpropertygroup.com.au">info@mannpropertygroup.com.au</a></li>
         <li><a href="tel:0401050235">0401 050 235</a></li>
-        <li><a href="#" onclick="goTo('contact');return false;">Book a Consultation</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('contact');return false;">Book a Consultation</a></li>
       </ul>
     </div>
   </div>
@@ -1001,19 +1008,19 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="footer-col">
       <div class="footer-col-title">Services</div>
       <ul>
-        <li><a href="#" onclick="goTo('services');return false;">House and Land</a></li>
-        <li><a href="#" onclick="goTo('services');return false;">New Homes</a></li>
-        <li><a href="#" onclick="goTo('services');return false;">Renovations</a></li>
-        <li><a href="#" onclick="goTo('services');return false;">Extensions</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">House and Land</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">New Homes</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">Renovations</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">Extensions</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <ul>
-        <li><a href="#" onclick="goTo('about');return false;">About Us</a></li>
-        <li><a href="#" onclick="goTo('properties');return false;">Properties</a></li>
-        <li><a href="#" onclick="goTo('testimonials');return false;">Reviews</a></li>
-        <li><a href="#" onclick="goTo('contact');return false;">Contact</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('about');return false;">About Us</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('properties');return false;">Properties</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('testimonials');return false;">Reviews</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('contact');return false;">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1021,7 +1028,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <ul>
         <li><a href="mailto:info@mannpropertygroup.com.au">info@mannpropertygroup.com.au</a></li>
         <li><a href="tel:0401050235">0401 050 235</a></li>
-        <li><a href="#" onclick="goTo('contact');return false;">Book a Consultation</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('contact');return false;">Book a Consultation</a></li>
       </ul>
     </div>
   </div>
@@ -1109,19 +1116,19 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="footer-col">
       <div class="footer-col-title">Services</div>
       <ul>
-        <li><a href="#" onclick="goTo('services');return false;">House and Land</a></li>
-        <li><a href="#" onclick="goTo('services');return false;">New Homes</a></li>
-        <li><a href="#" onclick="goTo('services');return false;">Renovations</a></li>
-        <li><a href="#" onclick="goTo('services');return false;">Extensions</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">House and Land</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">New Homes</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">Renovations</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services');return false;">Extensions</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <ul>
-        <li><a href="#" onclick="goTo('about');return false;">About Us</a></li>
-        <li><a href="#" onclick="goTo('properties');return false;">Properties</a></li>
-        <li><a href="#" onclick="goTo('testimonials');return false;">Reviews</a></li>
-        <li><a href="#" onclick="goTo('contact');return false;">Contact</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('about');return false;">About Us</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('properties');return false;">Properties</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('testimonials');return false;">Reviews</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('contact');return false;">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1129,7 +1136,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <ul>
         <li><a href="mailto:info@mannpropertygroup.com.au">info@mannpropertygroup.com.au</a></li>
         <li><a href="tel:0401050235">0401 050 235</a></li>
-        <li><a href="#" onclick="goTo('contact');return false;">Book a Consultation</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('contact');return false;">Book a Consultation</a></li>
       </ul>
     </div>
   </div>
