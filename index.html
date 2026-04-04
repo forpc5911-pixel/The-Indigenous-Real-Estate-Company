@@ -433,18 +433,18 @@ footer{background:#141414;padding:56px 5vw 24px}
 
 <!-- ===== NAV ===== -->
 <nav id="mainNav">
-  <div class="nav-logo" onclick="showPage('home')">
+  <div class="nav-logo" onclick="goTo('home')" style="cursor:pointer">
     <span class="nav-logo-main">Mann Property Group</span>
     <span class="nav-logo-sub">Premium Real Estate</span>
   </div>
   <ul class="nav-links">
-    <li><a onclick="showPage('home')" class="active" id="nl-home">Home</a></li>
-    <li><a onclick="showPage('about')" id="nl-about">About</a></li>
-    <li><a onclick="showPage('services')" id="nl-services">Services</a></li>
-    <li><a onclick="showPage('properties')" id="nl-properties">Properties</a></li>
-    <li><a onclick="showPage('testimonials')" id="nl-testimonials">Testimonials</a></li>
-    <li><a onclick="showPage('contact')" id="nl-contact">Contact</a></li>
-    <li><a onclick="showPage('contact')" class="nav-cta">Book Consultation</a></li>
+    <li><a href="#" onclick="goTo('home');return false;" class="active" id="nl-home">Home</a></li>
+    <li><a href="#" onclick="goTo('about');return false;" id="nl-about">About</a></li>
+    <li><a href="#" onclick="goTo('services');return false;" id="nl-services">Services</a></li>
+    <li><a href="#" onclick="goTo('properties');return false;" id="nl-properties">Properties</a></li>
+    <li><a href="#" onclick="goTo('testimonials');return false;" id="nl-testimonials">Testimonials</a></li>
+    <li><a href="#" onclick="goTo('contact');return false;" id="nl-contact">Contact</a></li>
+    <li><a href="#" onclick="goTo('contact');return false;" class="nav-cta">Book Consultation</a></li>
   </ul>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" type="button" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -548,27 +548,27 @@ footer{background:#141414;padding:56px 5vw 24px}
     <div class="footer-col">
       <div class="footer-col-title">Services</div>
       <ul>
-        <li><a onclick="goTo('services')">House and Land</a></li>
-        <li><a onclick="goTo('services')">New Homes</a></li>
-        <li><a onclick="goTo('services')">Renovations</a></li>
-        <li><a onclick="goTo('services')">Extensions</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">House and Land</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">New Homes</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">Renovations</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">Extensions</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <ul>
-        <li><a onclick="goTo('about')">About Us</a></li>
-        <li><a onclick="goTo('properties')">Properties</a></li>
-        <li><a onclick="goTo('testimonials')">Reviews</a></li>
-        <li><a onclick="goTo('contact')">Contact</a></li>
+        <li><a href="#" onclick="goTo('about');return false;">About Us</a></li>
+        <li><a href="#" onclick="goTo('properties');return false;">Properties</a></li>
+        <li><a href="#" onclick="goTo('testimonials');return false;">Reviews</a></li>
+        <li><a href="#" onclick="goTo('contact');return false;">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Contact</div>
       <ul>
-        <li><a href="/cdn-cgi/l/email-protection#8ae3e4ece5a4e7ebe4e4faf8e5faeff8fef3edf8e5fffacaede7ebe3e6a4e9e5e7"><span class="__cf_email__" data-cfemail="3c55525a5312515d52524c4e534c594e48455b4e53494c7c5b515d5550125f5351">[email&#160;protected]</span></a></li>
+        <li><a href="mailto:info@mannpropertygroup.com.au">info@mannpropertygroup.com.au</a></li>
         <li><a href="tel:0401050235">0401 050 235</a></li>
-        <li><a onclick="goTo('contact')">Book a Consultation</a></li>
+        <li><a href="#" onclick="goTo('contact');return false;">Book a Consultation</a></li>
       </ul>
     </div>
   </div>
@@ -586,7 +586,7 @@ footer{background:#141414;padding:56px 5vw 24px}
   <div class="page-hero">
     <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=1400')"></div>
     <div class="page-hero-inner">
-      <div class="breadcrumb"><span onclick="goTo('home')">Home</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-cur">About</span></div>
+      <div class="breadcrumb"><span onclick="goTo('home')" style="cursor:pointer">Home</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-cur">About</span></div>
       <span class="ph-eyebrow">Our Story</span>
       <h1>Built on trust.<br>Driven by <em>results.</em></h1>
       <p>We believe real estate is more than transactions. It is about building lasting relationships and helping you move forward with confidence.</p>
@@ -646,27 +646,27 @@ footer{background:#141414;padding:56px 5vw 24px}
     <div class="footer-col">
       <div class="footer-col-title">Services</div>
       <ul>
-        <li><a onclick="goTo('services')">House and Land</a></li>
-        <li><a onclick="goTo('services')">New Homes</a></li>
-        <li><a onclick="goTo('services')">Renovations</a></li>
-        <li><a onclick="goTo('services')">Extensions</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">House and Land</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">New Homes</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">Renovations</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">Extensions</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <ul>
-        <li><a onclick="goTo('about')">About Us</a></li>
-        <li><a onclick="goTo('properties')">Properties</a></li>
-        <li><a onclick="goTo('testimonials')">Reviews</a></li>
-        <li><a onclick="goTo('contact')">Contact</a></li>
+        <li><a href="#" onclick="goTo('about');return false;">About Us</a></li>
+        <li><a href="#" onclick="goTo('properties');return false;">Properties</a></li>
+        <li><a href="#" onclick="goTo('testimonials');return false;">Reviews</a></li>
+        <li><a href="#" onclick="goTo('contact');return false;">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Contact</div>
       <ul>
-        <li><a href="/cdn-cgi/l/email-protection#9cf5f2faf3b2f1fdf2f2eceef3ecf9eee8e5fbeef3e9ecdcfbf1fdf5f0b2fff3f1"><span class="__cf_email__" data-cfemail="026b6c646d2c6f636c6c72706d726770767b65706d777242656f636b6e2c616d6f">[email&#160;protected]</span></a></li>
+        <li><a href="mailto:info@mannpropertygroup.com.au">info@mannpropertygroup.com.au</a></li>
         <li><a href="tel:0401050235">0401 050 235</a></li>
-        <li><a onclick="goTo('contact')">Book a Consultation</a></li>
+        <li><a href="#" onclick="goTo('contact');return false;">Book a Consultation</a></li>
       </ul>
     </div>
   </div>
@@ -684,7 +684,7 @@ footer{background:#141414;padding:56px 5vw 24px}
   <div class="page-hero">
     <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1400')"></div>
     <div class="page-hero-inner">
-      <div class="breadcrumb"><span onclick="goTo('home')">Home</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-cur">Services</span></div>
+      <div class="breadcrumb"><span onclick="goTo('home')" style="cursor:pointer">Home</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-cur">Services</span></div>
       <span class="ph-eyebrow">What We Offer</span>
       <h1>Comprehensive property <em>solutions</em></h1>
       <p>From house and land packages to full renovations, we manage every aspect of your property journey with precision and genuine care.</p>
@@ -737,27 +737,27 @@ footer{background:#141414;padding:56px 5vw 24px}
     <div class="footer-col">
       <div class="footer-col-title">Services</div>
       <ul>
-        <li><a onclick="goTo('services')">House and Land</a></li>
-        <li><a onclick="goTo('services')">New Homes</a></li>
-        <li><a onclick="goTo('services')">Renovations</a></li>
-        <li><a onclick="goTo('services')">Extensions</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">House and Land</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">New Homes</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">Renovations</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">Extensions</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <ul>
-        <li><a onclick="goTo('about')">About Us</a></li>
-        <li><a onclick="goTo('properties')">Properties</a></li>
-        <li><a onclick="goTo('testimonials')">Reviews</a></li>
-        <li><a onclick="goTo('contact')">Contact</a></li>
+        <li><a href="#" onclick="goTo('about');return false;">About Us</a></li>
+        <li><a href="#" onclick="goTo('properties');return false;">Properties</a></li>
+        <li><a href="#" onclick="goTo('testimonials');return false;">Reviews</a></li>
+        <li><a href="#" onclick="goTo('contact');return false;">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Contact</div>
       <ul>
-        <li><a href="/cdn-cgi/l/email-protection#e78e898188c98a868989979588978295939e8095889297a7808a868e8bc984888a"><span class="__cf_email__" data-cfemail="e58c8b838acb88848b8b95978a958097919c82978a9095a58288848c89cb868a88">[email&#160;protected]</span></a></li>
+        <li><a href="mailto:info@mannpropertygroup.com.au">info@mannpropertygroup.com.au</a></li>
         <li><a href="tel:0401050235">0401 050 235</a></li>
-        <li><a onclick="goTo('contact')">Book a Consultation</a></li>
+        <li><a href="#" onclick="goTo('contact');return false;">Book a Consultation</a></li>
       </ul>
     </div>
   </div>
@@ -775,7 +775,7 @@ footer{background:#141414;padding:56px 5vw 24px}
   <div class="page-hero">
     <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1400')"></div>
     <div class="page-hero-inner">
-      <div class="breadcrumb"><span onclick="goTo('home')">Home</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-cur">Properties</span></div>
+      <div class="breadcrumb"><span onclick="goTo('home')" style="cursor:pointer">Home</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-cur">Properties</span></div>
       <span class="ph-eyebrow">Our Listings</span>
       <h1>Exceptional homes,<br><em>exceptional living</em></h1>
       <p>Explore our curated selection of premium properties across Melbourne's most sought-after growth corridors.</p>
@@ -795,7 +795,7 @@ footer{background:#141414;padding:56px 5vw 24px}
   <div class="props-cta">
     <h2 class="reveal">Not seeing what you are <em>looking for?</em></h2>
     <p class="reveal d1">We have access to off-market listings and upcoming releases. Get in touch and let us find exactly what you need.</p>
-    <button class="btn-gold reveal d2" onclick="goTo('contact')">Contact Us Today</button>
+    <button class="btn-gold reveal d2" href="#" onclick="goTo('contact');return false;">Contact Us Today</button>
   </div>
   
 <footer>
@@ -813,27 +813,27 @@ footer{background:#141414;padding:56px 5vw 24px}
     <div class="footer-col">
       <div class="footer-col-title">Services</div>
       <ul>
-        <li><a onclick="goTo('services')">House and Land</a></li>
-        <li><a onclick="goTo('services')">New Homes</a></li>
-        <li><a onclick="goTo('services')">Renovations</a></li>
-        <li><a onclick="goTo('services')">Extensions</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">House and Land</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">New Homes</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">Renovations</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">Extensions</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <ul>
-        <li><a onclick="goTo('about')">About Us</a></li>
-        <li><a onclick="goTo('properties')">Properties</a></li>
-        <li><a onclick="goTo('testimonials')">Reviews</a></li>
-        <li><a onclick="goTo('contact')">Contact</a></li>
+        <li><a href="#" onclick="goTo('about');return false;">About Us</a></li>
+        <li><a href="#" onclick="goTo('properties');return false;">Properties</a></li>
+        <li><a href="#" onclick="goTo('testimonials');return false;">Reviews</a></li>
+        <li><a href="#" onclick="goTo('contact');return false;">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Contact</div>
       <ul>
-        <li><a href="/cdn-cgi/l/email-protection#442d2a222b6a29252a2a34362b342136303d23362b3134042329252d286a272b29"><span class="__cf_email__" data-cfemail="b7ded9d1d899dad6d9d9c7c5d8c7d2c5c3ced0c5d8c2c7f7d0dad6dedb99d4d8da">[email&#160;protected]</span></a></li>
+        <li><a href="mailto:info@mannpropertygroup.com.au">info@mannpropertygroup.com.au</a></li>
         <li><a href="tel:0401050235">0401 050 235</a></li>
-        <li><a onclick="goTo('contact')">Book a Consultation</a></li>
+        <li><a href="#" onclick="goTo('contact');return false;">Book a Consultation</a></li>
       </ul>
     </div>
   </div>
@@ -851,7 +851,7 @@ footer{background:#141414;padding:56px 5vw 24px}
   <div class="page-hero">
     <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1400')"></div>
     <div class="page-hero-inner">
-      <div class="breadcrumb"><span onclick="goTo('home')">Home</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-cur">Reviews</span></div>
+      <div class="breadcrumb"><span onclick="goTo('home')" style="cursor:pointer">Home</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-cur">Reviews</span></div>
       <span class="ph-eyebrow">Client Stories</span>
       <h1>What our clients <em>say</em></h1>
       <p>Real experiences from real people. We are proud of the relationships we build and the outcomes we deliver.</p>
@@ -900,27 +900,27 @@ footer{background:#141414;padding:56px 5vw 24px}
     <div class="footer-col">
       <div class="footer-col-title">Services</div>
       <ul>
-        <li><a onclick="goTo('services')">House and Land</a></li>
-        <li><a onclick="goTo('services')">New Homes</a></li>
-        <li><a onclick="goTo('services')">Renovations</a></li>
-        <li><a onclick="goTo('services')">Extensions</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">House and Land</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">New Homes</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">Renovations</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">Extensions</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <ul>
-        <li><a onclick="goTo('about')">About Us</a></li>
-        <li><a onclick="goTo('properties')">Properties</a></li>
-        <li><a onclick="goTo('testimonials')">Reviews</a></li>
-        <li><a onclick="goTo('contact')">Contact</a></li>
+        <li><a href="#" onclick="goTo('about');return false;">About Us</a></li>
+        <li><a href="#" onclick="goTo('properties');return false;">Properties</a></li>
+        <li><a href="#" onclick="goTo('testimonials');return false;">Reviews</a></li>
+        <li><a href="#" onclick="goTo('contact');return false;">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Contact</div>
       <ul>
-        <li><a href="/cdn-cgi/l/email-protection#e78e898188c98a868989979588978295939e8095889297a7808a868e8bc984888a"><span class="__cf_email__" data-cfemail="026b6c646d2c6f636c6c72706d726770767b65706d777242656f636b6e2c616d6f">[email&#160;protected]</span></a></li>
+        <li><a href="mailto:info@mannpropertygroup.com.au">info@mannpropertygroup.com.au</a></li>
         <li><a href="tel:0401050235">0401 050 235</a></li>
-        <li><a onclick="goTo('contact')">Book a Consultation</a></li>
+        <li><a href="#" onclick="goTo('contact');return false;">Book a Consultation</a></li>
       </ul>
     </div>
   </div>
@@ -938,7 +938,7 @@ footer{background:#141414;padding:56px 5vw 24px}
   <div class="page-hero">
     <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=1400')"></div>
     <div class="page-hero-inner">
-      <div class="breadcrumb"><span onclick="goTo('home')">Home</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-cur">Contact</span></div>
+      <div class="breadcrumb"><span onclick="goTo('home')" style="cursor:pointer">Home</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-cur">Contact</span></div>
       <span class="ph-eyebrow">Reach Out</span>
       <h1>Let us start your <em>journey</em></h1>
       <p>Whether you have questions or are ready to begin, our team is here to guide you with clarity and confidence.</p>
@@ -950,7 +950,7 @@ footer{background:#141414;padding:56px 5vw 24px}
       <p class="contact-intro reveal d1">Book a free consultation or send us a message and we will get back to you within 24 hours.</p>
       <div class="cinfo reveal d2">
         <div class="cinfo-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4a1 1 0 011-1h10a1 1 0 011 1v8a1 1 0 01-1 1H3a1 1 0 01-1-1V4z"/><path d="M2 4l6 5 6-5"/></svg></div>
-        <div><div class="cinfo-label">Email</div><a href="/cdn-cgi/l/email-protection#157c7b737a3b78747b7b65677a657067616c72677a6065557278747c793b767a78" class="cinfo-val"><span class="__cf_email__" data-cfemail="8de4e3ebe2a3e0ece3e3fdffe2fde8fff9f4eaffe2f8fdcdeae0ece4e1a3eee2e0">[email&#160;protected]</span></a></div>
+        <div><div class="cinfo-label">Email</div><a href="mailto:info@mannpropertygroup.com.au" class="cinfo-val">info@mannpropertygroup.com.au</a></div>
       </div>
       <div class="cinfo reveal d3">
         <div class="cinfo-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13.5 10.5l-2-2a1 1 0 00-1.4 0l-1 1C8 9 7 8 6.5 7l1-1a1 1 0 000-1.4l-2-2a1 1 0 00-1.4 0L3 3.7C2.5 4.2 2.5 5 3 5.5c1.5 2 3.5 4 5.5 5.5.5.4 1.3.4 1.8-.1l1.2-1.2a1 1 0 000-1.2z"/></svg></div>
@@ -1008,27 +1008,27 @@ footer{background:#141414;padding:56px 5vw 24px}
     <div class="footer-col">
       <div class="footer-col-title">Services</div>
       <ul>
-        <li><a onclick="goTo('services')">House and Land</a></li>
-        <li><a onclick="goTo('services')">New Homes</a></li>
-        <li><a onclick="goTo('services')">Renovations</a></li>
-        <li><a onclick="goTo('services')">Extensions</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">House and Land</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">New Homes</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">Renovations</a></li>
+        <li><a href="#" onclick="goTo('services');return false;">Extensions</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <ul>
-        <li><a onclick="goTo('about')">About Us</a></li>
-        <li><a onclick="goTo('properties')">Properties</a></li>
-        <li><a onclick="goTo('testimonials')">Reviews</a></li>
-        <li><a onclick="goTo('contact')">Contact</a></li>
+        <li><a href="#" onclick="goTo('about');return false;">About Us</a></li>
+        <li><a href="#" onclick="goTo('properties');return false;">Properties</a></li>
+        <li><a href="#" onclick="goTo('testimonials');return false;">Reviews</a></li>
+        <li><a href="#" onclick="goTo('contact');return false;">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Contact</div>
       <ul>
-        <li><a href="/cdn-cgi/l/email-protection#f39a9d959cdd9e929d9d83819c839681878a94819c8683b3949e929a9fdd909c9e"><span class="__cf_email__" data-cfemail="640d0a020b4a09050a0a14160b140116101d03160b1114240309050d084a070b09">[email&#160;protected]</span></a></li>
+        <li><a href="mailto:info@mannpropertygroup.com.au">info@mannpropertygroup.com.au</a></li>
         <li><a href="tel:0401050235">0401 050 235</a></li>
-        <li><a onclick="goTo('contact')">Book a Consultation</a></li>
+        <li><a href="#" onclick="goTo('contact');return false;">Book a Consultation</a></li>
       </ul>
     </div>
   </div>
