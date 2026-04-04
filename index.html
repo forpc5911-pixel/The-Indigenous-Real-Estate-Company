@@ -430,6 +430,107 @@ footer{background:#141414;padding:56px 5vw 24px}
 </style>
 </head>
 <body>
+<script>
+// BULLETPROOF NAVIGATION - runs immediately on DOM ready
+// Wires every navigation element via addEventListener as backup to onclick
+document.addEventListener('DOMContentLoaded', function() {
+
+  // ---- PAGE SWITCHER ----
+  function switchPage(name) {
+    // hide all pages
+    var pages = document.querySelectorAll('.page');
+    for(var i=0;i<pages.length;i++) pages[i].classList.remove('active');
+    // show target
+    var t = document.getElementById('page-'+name);
+    if(t) t.classList.add('active');
+    // update nav
+    var links = document.querySelectorAll('.nav-links a, #mainNav a');
+    for(var i=0;i<links.length;i++) links[i].classList.remove('active');
+    var nl = document.getElementById('nl-'+name);
+    if(nl) nl.classList.add('active');
+    // nav solid/transparent
+    var nav = document.getElementById('mainNav');
+    if(nav) { if(name==='home'){nav.classList.remove('solid');}else{nav.classList.add('solid');} }
+    // scroll top
+    window.scrollTo(0,0);
+    // show all content
+    var reveals = document.querySelectorAll('.reveal');
+    for(var i=0;i<reveals.length;i++) reveals[i].classList.add('visible');
+    // close mobile menu
+    var mm = document.getElementById('mobileMenu');
+    if(mm) mm.classList.remove('open');
+    document.body.style.overflow='';
+    if(window._menuOpen) window._menuOpen=false;
+  }
+
+  // ---- EXPOSE GLOBALLY ----
+  window.goTo = switchPage;
+  window.showPage = switchPage;
+
+  // ---- WIRE NAV LINKS ----
+  var pages = ['home','about','services','properties','testimonials','contact'];
+  pages.forEach(function(p){
+    var el = document.getElementById('nl-'+p);
+    if(el) el.addEventListener('click', function(e){ e.preventDefault(); switchPage(p); });
+  });
+
+  // ---- WIRE ALL BUTTONS WITH data-goto ----
+  // Wire every button/a that has onclick containing goTo or showPage
+  var allClickable = document.querySelectorAll('[onclick]');
+  allClickable.forEach(function(el){
+    var oc = el.getAttribute('onclick') || '';
+    var match = oc.match(/(?:goTo|showPage)\(['"](\w+)['"]\)/);
+    if(match){
+      var dest = match[1];
+      el.addEventListener('click', function(e){
+        e.preventDefault();
+        switchPage(dest);
+      });
+    }
+  });
+
+  // ---- WIRE HAMBURGER ----
+  var ham = document.getElementById('hamburger');
+  var mMenu = document.getElementById('mobileMenu');
+  if(ham && mMenu){
+    ham.addEventListener('click', function(){
+      window._menuOpen = !window._menuOpen;
+      if(window._menuOpen){
+        mMenu.classList.add('open');
+        document.body.style.overflow='hidden';
+      } else {
+        mMenu.classList.remove('open');
+        document.body.style.overflow='';
+      }
+    });
+  }
+
+  // ---- WIRE MOB CLOSE BUTTON ----
+  var mobClose = document.querySelector('.mob-close');
+  if(mobClose && mMenu){
+    mobClose.addEventListener('click', function(){
+      mMenu.classList.remove('open');
+      document.body.style.overflow='';
+      window._menuOpen=false;
+    });
+  }
+
+  // ---- SHOW ALL CONTENT ----
+  var reveals = document.querySelectorAll('.reveal');
+  for(var i=0;i<reveals.length;i++) reveals[i].classList.add('visible');
+
+  // ---- NAV SCROLL ----
+  window.addEventListener('scroll', function(){
+    var nav = document.getElementById('mainNav');
+    if(nav && document.querySelector('.page.active') && document.querySelector('.page.active').id === 'page-home'){
+      nav.classList.toggle('solid', window.scrollY > 60);
+    }
+  });
+
+  console.log('Mann Property Group: Navigation ready. goTo and showPage wired successfully.');
+});
+</script>
+
 
 <!-- ===== NAV ===== -->
 <nav id="mainNav">
